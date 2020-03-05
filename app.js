@@ -1,7 +1,12 @@
 var express = require ('express');
 
 var app = express();
-var app = require ('./config/server')
+var app = require ('./config/server');
+
+var rotaNoticias = require('./app/routes/noticias')(app);
+var rotaNoticia = require('./app/routes/noticia')(app);
+var rotaHome = require('./app/routes/home')(app);
+var rotaFormInclusaoNoticia = require('./app/routes/formulario_inclusao_noticias')(app);
 
 app.set('view engine', 'ejs');
 
